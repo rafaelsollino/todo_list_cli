@@ -3,6 +3,8 @@ import json
 import os
 from pathlib import Path
 
+import tabulate
+
 file = "todolist.json"
 BASE_PATH = Path().cwd()
 FILE_PATH = os.path.join(BASE_PATH, file)
@@ -31,6 +33,14 @@ def update_data(table: list[dict], new_data: dict):
     with open(FILE_PATH, 'w') as file:
         json.dump(table, file, indent=4)
 
+def print_tabulated(table):
+    '''
+        Print a tabulated formated version of a python iterable
+    '''
+
+    headers = ['id', 'Tarefa', 'Foi realizada?']
+    print(tabulate.tabulate(table, headers="keys", tablefmt="pretty"))
+
 
 def task_add(table: list, string: str):
     new_id = len(table) + 1
@@ -41,6 +51,7 @@ def task_add(table: list, string: str):
     }
     update_data(table, new_task)
     print("TASK", new_task)  # DEBUG PRINT
+    print_tabulated(table)
 
     return None
     
