@@ -1,11 +1,19 @@
 import argparse
 import json
 import os
+from pathlib import Path
 
-DATA_FILE = "todolist.json"
-# from todo_list_cli.logic import FUNCTIONS HERE!!
+file = "todolist.json"
+BASE_PATH = Path().cwd()
+FILE_PATH = os.path.join(BASE_PATH, file)
+
+# Creates a JSON file
+if not os.path.exists(FILE_PATH):
+    with open(FILE_PATH, "w") as f:
+        pass
+
 def load_data():
-
+    ...
 
 def task_add(table:list, string:str):
     new_id = len(table) + 1

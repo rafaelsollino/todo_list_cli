@@ -10,3 +10,4 @@ removeu algo, printa a tabela
 
 DEPENDENCIAS PARA INSTALAR:
 https://pypi.org/project/tabulate/
+https://pypi.org/project/setuptools/
