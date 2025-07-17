@@ -1,0 +1,12 @@
+COMANDOS:
+add task 
+delete task
+edit task 
+
+todos tem q ter uma print function no final. 
+Exemplo: adicionou algo, printa a tabela
+removeu algo, printa a tabela
+
+
+DEPENDENCIAS PARA INSTALAR:
+https://pypi.org/project/tabulate/
