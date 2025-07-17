@@ -5,14 +5,14 @@ description = "todo_list_cli"
 readme = "README.md"
 authors = [
   { name = "Carlos Vinícius Teixeira de Souza", email = "carlosvtsdev@gmail.com" },
-  { name = "", email = ""},
+  { name = "Rafael do Valle Sollino", email = "computadorduvalli@gmail.com"},
 ]
 
 [project.urls]
 website = "https://example.com"
 
 [project.scripts]
-todo_list_cli = "todo_list_cli.cli:run"
+todolist = "todo_list_cli.cli:run"
 
 [build-system]
 requires = ["setuptools>=61.0"]
