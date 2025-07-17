@@ -10,7 +10,7 @@ def remove_func_here():
     print("Hello remove")
     ...
 
-def edit_func_here():
+def edit_func_here(todo_table, string, index):
     print("Hello edit")
     ...
 
@@ -40,8 +40,14 @@ def run():
     args = parser.parse_args()
 
     # TEST PRINT
-    args.func()
-    print(args)
+
+    args.func() # ativa a função dependendo de qual subparser vc usa
+    args_dict = vars(args)
+    print("ARGS ", args)
+    print("ARGS DICT ", args_dict)
+    print("ARGS DICT GET STRING ", args_dict.get("string"))
+    
+
 
 if __name__ == "__main__":
     run()
