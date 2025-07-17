@@ -1,0 +1,19 @@
+[project]
+name = "todo_list_cli"
+version = "0.0.0.1"
+description = "todo_list_cli"
+readme = "README.md"
+authors = [
+  { name = "Carlos Vinícius Teixeira de Souza", email = "carlosvtsdev@gmail.com" },
+  { name = "", email = ""},
+]
+
+[project.urls]
+website = "https://example.com"
+
+[project.scripts]
+todo_list_cli = "todo_list_cli.cli:run"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
