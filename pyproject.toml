@@ -5,7 +5,7 @@ description = "todo_list_cli"
 readme = "README.md"
 authors = [
   { name = "Carlos Vinícius Teixeira de Souza", email = "carlosvtsdev@gmail.com" },
-  { name = "", email = ""},
+  { name = "Rafael do Valle Sollino", email = "computadorduvalli@gmail.com"},
 ]
 
 [project.urls]
