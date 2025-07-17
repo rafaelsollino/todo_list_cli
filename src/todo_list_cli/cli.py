@@ -1,10 +1,22 @@
 import argparse
+import json
+import os
 
+DATA_FILE = "todolist.json"
 # from todo_list_cli.logic import FUNCTIONS HERE!!
+def load_data():
 
-def add_func_here():
-    print("Hello world add")
-    ...
+
+def task_add(table:list, string:str):
+    new_id = len(table) + 1
+    new_task = {
+        "ID": new_id,
+        "Tarefa": string,
+        "Completo": False
+    }
+    print(new_task)
+    return None
+    
 
 def remove_func_here():
     print("Hello remove")
@@ -15,6 +27,7 @@ def edit_func_here(todo_table, string, index):
     ...
 
 def run():
+   
     parser = argparse.ArgumentParser(prog="Todo List", description="todo list")
     subparser = parser.add_subparsers(dest="command", required=True)
 
@@ -23,7 +36,7 @@ def run():
     # add
     add_parser = subparser.add_parser("add", help="Add a new task")
     add_parser.add_argument("-s", "--string", type=str, required=True, help="Your task")
-    add_parser.set_defaults(func=add_func_here)
+    add_parser.set_defaults(func=task_add)
 
     # remove
     remove_parser = subparser.add_parser("remove", help="Remove a task")
@@ -40,12 +53,13 @@ def run():
     args = parser.parse_args()
 
     # TEST PRINT
-
-    args.func() # ativa a função dependendo de qual subparser vc usa
     args_dict = vars(args)
-    print("ARGS ", args)
-    print("ARGS DICT ", args_dict)
-    print("ARGS DICT GET STRING ", args_dict.get("string"))
+    getstring = args_dict.get("string")
+    
+    args.func(table, getstring) # ativa a função dependendo de qual subparser vc usa
+    # print("ARGS ", args)
+    # print("ARGS DICT ", args_dict)
+    # print("ARGS DICT GET STRING ", args_dict.get("string"))
     
 
 
